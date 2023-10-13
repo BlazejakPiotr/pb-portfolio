@@ -34,10 +34,10 @@ const Projects = (props: Props) => {
   return (
     <section
       id="projects"
-      className="max-w-6xl mx-auto p-5 flex flex-wrap justify-center items-center min-h-screen"
+      className="max-w-6xl mx-auto p-5 flex flex-col flex-wrap justify-center items-center gap-10 min-h-screen"
     >
-      <h1 className="text-4xl text-orange font-bold text-center h-fit mt-[72px]">
-        My <span className="text-light-blue ">projects</span>
+      <h1 className="text-4xl text-light-blue font-bold text-center h-fit mt-[72px]">
+        My <span className="text-orange ">projects</span>
       </h1>
       <div className="w-full grid grid-cols-1 lg:grid-cols-3 place-content-between gap-10">
         <ProjectItem

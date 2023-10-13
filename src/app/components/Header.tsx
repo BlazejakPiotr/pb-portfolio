@@ -1,13 +1,14 @@
-import Image from "next/image";
 import React from "react";
 import TypeWriter from "./TypeWriter";
-import Link from "next/link";
 
 type Props = {};
 
 const Header = (props: Props) => {
   return (
-    <section className="relative z-0 h-screen w-full flex justify-center items-center space-x-10 ">
+    <section
+      className="relative z-0 h-screen w-full flex justify-center items-center space-x-10 "
+      id="/#home"
+    >
       <div className="flex flex-col justify-center items-center flex-grow gap-10">
         <div className=" flex items-center justify-center hover:scale-105 duration-200 ">
           <svg

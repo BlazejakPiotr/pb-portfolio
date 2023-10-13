@@ -22,59 +22,66 @@ const Contact = (props: Props) => {
     <>
       <section
         id="contact"
-        className="max-w-6xl mx-auto p-5 flex flex-col flex-wrap justify-center items-center gap-10 min-h-screen"
+        className="max-w-6xl mx-auto p-5 min-h-screen flex flex-col justify-center"
       >
-        <h1 className="text-4xl text-light-blue font-bold  h-fit mt-[72px]">
+        <h1 className="text-4xl w-full text-light-blue font-bold h-min mt-[72px]">
           Get in <span className="text-orange">Touch</span>
         </h1>
+        <div className="flex flex-wrap justify-between items-center gap-8">
+          <p className="w-full lg:w-1/2 text-start text-blue">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rerum
+            labore similique doloribus non nesciunt tempore laborum, asperiores
+            accusamus pariatur perspiciatis enim maxime nisi voluptatibus et
+            beatae, excepturi nobis reiciendis, libero recusandae commodi nemo
+            ipsum quod. Quae dolore deserunt error nulla ea excepturi mollitia
+            earum, magnam eum nam nostrum in.
+          </p>
 
-        <p className="text-blue md:w-[40%]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rerum
-          labore similique doloribus non nesciunt tempore laborum, asperiores
-          accusamus pariatur perspiciatis enim maxime nisi voluptatibus et
-          beatae, excepturi nobis reiciendis, libero recusandae commodi nemo
-          ipsum quod. Quae dolore deserunt error nulla ea excepturi mollitia
-          earum, magnam eum nam nostrum in.
-        </p>
-
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col justify-center items-center space-y-3 w-full md:w-[40%] "
-        >
-          <input
-            {...register("name", { required: true })}
-            className="placeholder-purple border border-purple text-white focus:outline-none p-2 bg-transparent rounded-lg w-full"
-            placeholder="Your name"
-            type="text"
-          />
-          {errors.name && (
-            <span className="text-red-500 text-sm">This field is required</span>
-          )}
-          <input
-            {...register("subject", { required: true })}
-            className="placeholder-purple border border-purple text-white focus:outline-none p-2 bg-transparent rounded-lg w-full"
-            placeholder="Subject"
-            type="text"
-          />
-          {errors.subject && (
-            <span className="text-red-500 text-sm">This field is required</span>
-          )}
-          <textarea
-            {...register("message", { required: true })}
-            rows={8}
-            className="placeholder-purple border border-purple text-white focus:outline-none p-2 bg-transparent rounded-lg w-full"
-            placeholder="Your message"
-          />
-          {errors.message && (
-            <span className="text-red-500 text-sm">This field is required</span>
-          )}
-          <button
-            type="submit"
-            className="bg-orange p-3 rounded-lg font-bold w-full text-white hover:opacity-90"
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col justify-center items-center space-y-3 w-full lg:w-[40%]"
           >
-            Submit
-          </button>
-        </form>
+            <input
+              {...register("name", { required: true })}
+              className="placeholder-purple border border-purple text-white focus:outline-none p-2 bg-transparent rounded-lg w-full"
+              placeholder="Your name"
+              type="text"
+            />
+            {errors.name && (
+              <span className="text-red-500 text-sm">
+                This field is required
+              </span>
+            )}
+            <input
+              {...register("subject", { required: true })}
+              className="placeholder-purple border border-purple text-white focus:outline-none p-2 bg-transparent rounded-lg w-full"
+              placeholder="Subject"
+              type="text"
+            />
+            {errors.subject && (
+              <span className="text-red-500 text-sm">
+                This field is required
+              </span>
+            )}
+            <textarea
+              {...register("message", { required: true })}
+              rows={6}
+              className="placeholder-purple border border-purple text-white focus:outline-none p-2 bg-transparent rounded-lg w-full"
+              placeholder="Your message"
+            />
+            {errors.message && (
+              <span className="text-red-500 text-sm">
+                This field is required
+              </span>
+            )}
+            <button
+              type="submit"
+              className="bg-orange p-3 rounded-lg font-bold w-full text-white hover:opacity-90"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </section>
     </>
   );

@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-import React, { Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import { SocialIcon } from "react-social-icons";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { usePathname } from "next/navigation";
 import { BiMenu, BiSolidUserCircle } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
+import { usePathname } from "next/navigation";
+
 type Props = {};
 
 type NavLinkType = {
@@ -15,18 +16,37 @@ type NavLinkType = {
 
 export const navLinks: NavLinkType[] = [
   { href: "/", title: "Home" },
-  { href: "/#about", title: "About" },
-  { href: "/#projects", title: "Projects" },
-  { href: "/#contact", title: "Contact" },
+  { href: "about", title: "About" },
+  { href: "projects", title: "Projects" },
+  { href: "contact", title: "Contact" },
   // { href: "/blog", title: "Blog" },
 ];
 
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
+
 const Navbar = (props: Props) => {
-  let pathname = usePathname() || "/";
+  const [active, setActive] = useState("/#");
+
+  const handleActiveLink = (href: string) => setActive(href);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname === "/") {
+      setActive("/");
+    }
+  }, [pathname]);
   return (
-    <Disclosure as="nav">
+    <Disclosure as="nav" className={"h-[72px] "}>
       {({ open }) => (
-        <div className="px-6  fixed top-0 left-0 right-0 w-full bg-light-navy z-50 ">
+        <div
+          className={classNames(
+            "bg-light-navy",
+            "px-6 fixed top-0 left-0 right-0 w-full  z-50 transition 2s ease-linear"
+          )}
+        >
           <div className="max-w-7xl h-[72px]  mx-auto flex items-center justify-between ">
             <div className=" inset-y-0 left-0 flex items-center md:hidden">
               {/* Mobile menu button*/}
@@ -66,14 +86,18 @@ const Navbar = (props: Props) => {
             <div className=" max-md:hidden flex items-center space-x-2 md:space-x-10  h-full justify-center">
               {navLinks.map((el, i) => (
                 <Link
-                  href={el.href}
-                  key={i}
                   prefetch
+                  href={"/#" + el.href}
+                  onClick={() => handleActiveLink(el.href)}
+                  key={i}
                   className={`h-full flex items-center hover:text-blue tracking-wide md:tracking-widest text-base font-medium ${
-                    pathname === el.href
+                    active === el.href ||
+                    (active.endsWith("/") && i === 0) ||
+                    (pathname.includes("projects") && i === 2)
                       ? "border-orange text-light-blue inline-flex items-center px-1 pt-1 border-b-4 font-bold h-full"
                       : "border-transparent text-purple"
                   }`}
+                  aria-current={active === el.href ? "page" : undefined}
                 >
                   {el.title}
                 </Link>
@@ -145,15 +169,16 @@ const Navbar = (props: Props) => {
                 <Disclosure.Button
                   key={item.title + i}
                   as="a"
-                  href={"#"}
+                  onClick={() => handleActiveLink(pathname)}
+                  href={item.href}
                   className={`block rounded-md px-3 py-2 text-base font-medium ${
-                    pathname === item.href
+                    active === item.href
                       ? "bg-gray-500 text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white"
                   }
                     
                   `}
-                  aria-current={pathname === item.href ? "page" : undefined}
+                  aria-current={active === item.href ? "page" : undefined}
                 >
                   {item.title}
                 </Disclosure.Button>
