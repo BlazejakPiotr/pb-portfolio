@@ -14,11 +14,10 @@ const TypeWriter = (props: Props) => {
       "eSports Player",
     ],
     loop: true,
-    delaySpeed: 2000,
+    delaySpeed: 2500,
   });
   return (
-    <h1 className="text-2xl md:5xl font-bold text-light-blue">
-      {"and I'm "}
+    <h1 className="text-4xl text-center lg:text-6xl font-bold text-light-blue">
       <span className="text-orange">{text.split(" ")[0]} </span>
       {text.split(" ")[1]}
       <Cursor cursorBlinking={true} cursorColor="#E84646" />

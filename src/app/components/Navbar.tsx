@@ -15,8 +15,8 @@ type NavLinkType = {
 
 export const navLinks: NavLinkType[] = [
   { href: "/", title: "Home" },
-  { href: "/projects", title: "Projects" },
   { href: "/about", title: "About" },
+  { href: "/projects", title: "Projects" },
   { href: "/contact", title: "Contact" },
   { href: "/blog", title: "Blog" },
 ];
@@ -27,8 +27,8 @@ const Navbar = (props: Props) => {
     <Disclosure as="nav">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto h-[56px] px-4 my-2 flex items-center justify-between relative">
-            <div className=" inset-y-0 left-2 flex items-center md:hidden">
+          <div className="max-w-7xl mx-auto h-[56px] px-6 my-2 flex items-center justify-between relative">
+            <div className=" inset-y-0 left-0 flex items-center md:hidden">
               {/* Mobile menu button*/}
               <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-blue hover:bg-navy hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="absolute -inset-0.5 " />
@@ -41,45 +41,44 @@ const Navbar = (props: Props) => {
               </Disclosure.Button>
             </div>
             <div className="flex items-center space-x-16 h-full">
-              <div className="flex flex-shrink-0 items-center ">
-                <Link href={"/"}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="45px"
-                    viewBox="0 0 1421.07 1622"
-                  >
-                    <g id="Shape" fill="#EAF1FF" fill-rule="nonzero">
-                      <path d="M588.07,468V655h137c138,0,220-61,220-187,0-254-281-250-281-250H286.79L31.07,11h635c247,0,437.44,137.42,483,304,32,117,27.34,299-61,362-1.17.83,7,3,13.26,4.72,70.32,19.3,308.74,131.66,308.74,462.28,0,467-403,467-403,467h-976l247.5-226h592.5s278,10,278-254c0-141-88-283-307-283h-254v387h-249l-.5-767Z"></path>
-                    </g>
-                  </svg>
-                </Link>
-              </div>
-              <div className=" max-md:hidden flex items-center space-x-2 md:space-x-10  h-full justify-center">
-                {navLinks.map((el, i) => (
-                  <Link
-                    href={"#"}
-                    key={i}
-                    prefetch
-                    className={`h-full flex items-center hover:text-blue tracking-wide md:tracking-widest text-base font-medium ${
-                      pathname === el.href
-                        ? "border-orange text-light-blue inline-flex items-center px-1 pt-1 border-b-4 font-bold h-full"
-                        : "border-transparent text-purple"
-                    }`}
-                  >
-                    {el.title}
-                  </Link>
-                ))}
-              </div>
+              <Link href={"/"}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="40px"
+                  viewBox="0 0 1421.07 1622"
+                  className="fill-purple hover:fill-light-blue duration-300"
+                >
+                  <g id="Shape" fill-rule="nonzero">
+                    <path d="M588.07,468V655h137c138,0,220-61,220-187,0-254-281-250-281-250H286.79L31.07,11h635c247,0,437.44,137.42,483,304,32,117,27.34,299-61,362-1.17.83,7,3,13.26,4.72,70.32,19.3,308.74,131.66,308.74,462.28,0,467-403,467-403,467h-976l247.5-226h592.5s278,10,278-254c0-141-88-283-307-283h-254v387h-249l-.5-767Z"></path>
+                  </g>
+                </svg>
+              </Link>
             </div>
-            <div>
-              {/* <button
-              className="border-blue border-2 rounded-lg py-2 px-6 text-blue font-bold hover:bg-orange hover:text-light-blue hover:border-orange hover:scale-110 duration-150"
-              onClick={() => console.log("click")}
-            >
-              Sign In
-            </button> */}
-              <Menu as="div">
-                <Menu.Button className="relative items-center justify-center rounded-md text-3xl p-2 text-blue hover:bg-navy hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <div className=" max-md:hidden flex items-center space-x-2 md:space-x-10  h-full justify-center">
+              {navLinks.map((el, i) => (
+                <Link
+                  href={"#"}
+                  key={i}
+                  prefetch
+                  className={`h-full flex items-center hover:text-blue tracking-wide md:tracking-widest text-base font-medium ${
+                    pathname === el.href
+                      ? "border-orange text-light-blue inline-flex items-center px-1 pt-1 border-b-4 font-bold h-full"
+                      : "border-transparent text-purple"
+                  }`}
+                >
+                  {el.title}
+                </Link>
+              ))}
+            </div>
+            {/* <div> */}
+            {/* <button
+                className="border-blue border-2 rounded-lg py-2 px-6 text-blue font-bold hover:bg-orange hover:text-light-blue hover:border-orange hover:scale-110 duration-150"
+                onClick={() => console.log("click")}
+              >
+                Sign In
+              </button> */}
+            {/* <Menu as="div">
+                <Menu.Button className="relative items-center justify-center rounded-md text-4xl p-2 text-blue hover:bg-navy hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
 
                   <BiSolidUserCircle />
@@ -127,12 +126,12 @@ const Navbar = (props: Props) => {
                     </Menu.Item>
                   </Menu.Items>
                 </Transition>
-              </Menu>
-            </div>
+              </Menu> */}
+            {/* </div> */}
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+          <Disclosure.Panel className="sm:hidden absolute left-0 right-6 z-10 bg-light-navy">
+            <div className=" space-y-1 px-2 pb-3 pt-2">
               {navLinks.map((item, i) => (
                 <Disclosure.Button
                   key={item.title + i}
