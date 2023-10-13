@@ -7,17 +7,19 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      navy: "#07071E",
-      "light-navy": "#19193E",
-      blue: "#BECCE9",
-      "light-blue": "#EAF1FF",
-      purple: "#8484AF",
-      orange: "#E84646",
-    },
-    fontFamily: {
-      sans: ["Montserrat", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+    extend: {
+      colors: {
+        navy: "#07071E",
+        "light-navy": "#19193E",
+        blue: "#BECCE9",
+        "light-blue": "#EAF1FF",
+        purple: "#8484AF",
+        orange: "#E84646",
+      },
+      fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
+        serif: ["Merriweather", "serif"],
+      },
     },
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
