@@ -1,10 +1,11 @@
 import About from "./components/About";
+import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
 
 export default function Home() {
   return (
-    <div className="container mx-auto space-y-20">
+    <div className="container mx-auto">
       {/* header */}
       <Header />
       {/* about */}
@@ -12,7 +13,7 @@ export default function Home() {
       {/* projects */}
       <Projects />
       {/* blogs */}
-      {/* contact */}
+      <Contact />
       {/* footer */}
     </div>
   );

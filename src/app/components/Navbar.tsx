@@ -16,9 +16,9 @@ type NavLinkType = {
 export const navLinks: NavLinkType[] = [
   { href: "/", title: "Home" },
   { href: "/#about", title: "About" },
-  { href: "/projects", title: "Projects" },
-  { href: "/contact", title: "Contact" },
-  { href: "/blog", title: "Blog" },
+  { href: "/#projects", title: "Projects" },
+  { href: "/#contact", title: "Contact" },
+  // { href: "/blog", title: "Blog" },
 ];
 
 const Navbar = (props: Props) => {
@@ -26,8 +26,8 @@ const Navbar = (props: Props) => {
   return (
     <Disclosure as="nav">
       {({ open }) => (
-        <>
-          <div className="max-w-7xl mx-auto h-[56px] px-6 my-2 flex items-center justify-between relative">
+        <div className="px-6  fixed top-0 left-0 right-0 w-full bg-light-navy z-50 ">
+          <div className="max-w-7xl h-[72px]  mx-auto flex items-center justify-between ">
             <div className=" inset-y-0 left-0 flex items-center md:hidden">
               {/* Mobile menu button*/}
               <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-blue hover:bg-navy hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -40,19 +40,28 @@ const Navbar = (props: Props) => {
                 )}
               </Disclosure.Button>
             </div>
-            <div className="flex items-center space-x-16 h-full">
-              <Link href={"/"}>
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="40px"
-                  viewBox="0 0 1421.07 1622"
-                  className="fill-purple hover:fill-light-blue duration-300"
-                >
-                  <g id="Shape" fill-rule="nonzero">
-                    <path d="M588.07,468V655h137c138,0,220-61,220-187,0-254-281-250-281-250H286.79L31.07,11h635c247,0,437.44,137.42,483,304,32,117,27.34,299-61,362-1.17.83,7,3,13.26,4.72,70.32,19.3,308.74,131.66,308.74,462.28,0,467-403,467-403,467h-976l247.5-226h592.5s278,10,278-254c0-141-88-283-307-283h-254v387h-249l-.5-767Z"></path>
-                  </g>
-                </svg> */}
-              </Link>
+            <div className="flex items-center space-x-4">
+              <SocialIcon
+                className="bg-light-navy text-purple rounded-full hover:scale-125 hover:text-light-blue duration-200"
+                url="https://discord.com"
+                style={{ width: 42, height: 42 }}
+                bgColor="transparent"
+                fgColor="currentColor"
+              />
+              <SocialIcon
+                className="bg-light-navy text-purple rounded-full hover:scale-125 hover:text-light-blue duration-200"
+                url="https://github.com"
+                style={{ width: 42, height: 42 }}
+                bgColor="transparent"
+                fgColor="currentColor"
+              />
+              <SocialIcon
+                className="bg-light-navy text-purple rounded-full hover:scale-125 hover:text-light-blue duration-200"
+                url="https://linkedin.com"
+                style={{ width: 42, height: 42 }}
+                bgColor="transparent"
+                fgColor="currentColor"
+              />
             </div>
             <div className=" max-md:hidden flex items-center space-x-2 md:space-x-10  h-full justify-center">
               {navLinks.map((el, i) => (
@@ -151,7 +160,7 @@ const Navbar = (props: Props) => {
               ))}
             </div>
           </Disclosure.Panel>
-        </>
+        </div>
       )}
     </Disclosure>
   );

@@ -21,19 +21,23 @@ const About = (props: Props) => {
     <>
       <section
         id="about"
-        className="max-w-7xl mx-auto p-5 flex flex-wrap justify-center gap-10 h-full"
+        className="max-w-6xl mx-auto p-5 flex flex-col flex-wrap justify-center gap-10 min-h-screen"
       >
-        <div className="w-full flex justify-center">
-          <h1 className="text-4xl text-blue font-bold mb-5 border-b-4 border-orange leading-[50px] w-fit text-center">
-            About
-          </h1>
-        </div>
+        <h1 className="text-4xl text-light-blue font-bold text-center h-fit mt-[72px]">
+          About <span className="text-orange">me</span>
+        </h1>
 
-        <div className="lg:w-2/3 flex flex-col space-y-5">
-          <h2 className="  text-xl text-orange font-semibold leading-[50px] w-fit text-start">
-            Who am I?
-          </h2>
-          <p className=" text-light-blue text-justify justify-start items-start">
+        <div className="flex flex-row flex-wrap gap-10">
+          <div className="max-md:w-full rounded-full flex items-center justify-center hover:scale-105 duration-500 ">
+            <Image
+              src="/me_pic.webp"
+              alt="picture of me"
+              className="rounded-full"
+              height={250}
+              width={250}
+            />
+          </div>
+          <p className="flex flex-1 text-light-blue text-justify justify-center items-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
             repudiandae neque, quisquam totam voluptatibus reiciendis provident!
             Repellendus omnis a dolorum ut pariatur itaque quod amet dolor alias
@@ -41,26 +45,26 @@ const About = (props: Props) => {
             nesciunt, excepturi assumenda, ullam explicabo expedita quaerat
             consectetur dolore. Nobis officiis ducimus veritatis facilis.
           </p>
-          <h2 className="  text-xl text-orange font-semibold leading-[50px] w-fit text-start">
-            Skills
-          </h2>
-          <div className="grid grid-cols-4 lg:grid-cols-7 gap-8">
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
-          </div>
         </div>
+        {/* <h1 className="text-4xl text-light-blue font-bold text-center h-fit mt-[72px]">
+          Skills <span className="text-orange">&</span> tools
+        </h1>
 
-        <div className="h-full flex flex-1 lg:flex-shrink flex-col lg:items-end justify-center flex-wrap">
+        <div className="grid grid-cols-4 lg:grid-cols-9 gap-4  justify-stretch">
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+        </div> */}
+        {/* <div className="h-full flex flex-1 lg:flex-shrink flex-col lg:items-end justify-center flex-wrap">
           <h2 className="  text-xl text-orange font-semibold leading-[50px] w-fit text-center">
             Work experience
           </h2>
@@ -72,7 +76,7 @@ const About = (props: Props) => {
               <TimelineMarker name="Farma Małecki" year={2018} />
               <TimelineMarker name="DEMCAR Michał Delik" year={2014} />
             </div>
-            {/* TIMELINE */}
+            {/* TIMELINE 
 
             <div className="h-full w-3 flex flex-col items-center justify-center">
               <div
@@ -82,7 +86,7 @@ const About = (props: Props) => {
               <div className="h-[300px] w-1 bg-purple"></div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
