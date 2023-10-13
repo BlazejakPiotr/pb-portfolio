@@ -28,16 +28,8 @@ const About = (props: Props) => {
             About
           </h1>
         </div>
-        <div className="w-full lg:w-1/5 rounded-full flex items-start justify-start hover:scale-105 duration-500 ">
-          <Image
-            src="/me_pic.webp"
-            alt="picture of me"
-            className="rounded-full"
-            height={250}
-            width={250}
-          />
-        </div>
-        <div className="lg:w-2/5 flex flex-col">
+
+        <div className="lg:w-2/3 flex flex-col space-y-5">
           <h2 className="  text-xl text-orange font-semibold leading-[50px] w-fit text-start">
             Who am I?
           </h2>
@@ -52,9 +44,23 @@ const About = (props: Props) => {
           <h2 className="  text-xl text-orange font-semibold leading-[50px] w-fit text-start">
             Skills
           </h2>
+          <div className="grid grid-cols-4 lg:grid-cols-7 gap-8">
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+            <div className="w-16 h-16 rounded-full border-2 border-blue bg-contain bg-[url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20221110153201)]"></div>
+          </div>
         </div>
 
-        <div className="h-full flex flex-shrink flex-col lg:items-end justify-center flex-wrap">
+        <div className="h-full flex flex-1 lg:flex-shrink flex-col lg:items-end justify-center flex-wrap">
           <h2 className="  text-xl text-orange font-semibold leading-[50px] w-fit text-center">
             Work experience
           </h2>
