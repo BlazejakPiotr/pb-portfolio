@@ -5,9 +5,9 @@ import Projects from "./components/Projects";
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div className=" space-y-20">
       {/* header */}
-      <Header />
+
       {/* about */}
       <About />
       {/* projects */}

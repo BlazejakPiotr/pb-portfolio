@@ -19,25 +19,13 @@ const TimelineMarker = ({ name, year }: { name: string; year: number }) => (
 const About = (props: Props) => {
   return (
     <>
-      <section
-        id="about"
-        className="max-w-6xl mx-auto p-5 flex flex-col flex-wrap justify-center gap-10 min-h-screen"
-      >
-        <h1 className="text-4xl text-light-blue font-bold text-center h-fit mt-[72px]">
-          About <span className="text-orange">me</span>
+      <section id="about" className="flex flex-col gap-5">
+        <h1 className="text-2xl  text-light-blue font-semibold text-start h-fit border-b-2  border-orange w-fit ">
+          About
         </h1>
 
         <div className="flex flex-row flex-wrap gap-10">
-          <div className="max-md:w-full rounded-full flex items-center justify-center hover:scale-105 duration-500 ">
-            <Image
-              src="/me_pic.webp"
-              alt="picture of me"
-              className="rounded-full"
-              height={250}
-              width={250}
-            />
-          </div>
-          <p className="flex flex-1 text-light-blue text-justify justify-center items-center">
+          <p className="flex  text-blue text-justify justify-center items-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
             repudiandae neque, quisquam totam voluptatibus reiciendis provident!
             Repellendus omnis a dolorum ut pariatur itaque quod amet dolor alias

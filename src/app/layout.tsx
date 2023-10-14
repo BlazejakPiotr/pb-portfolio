@@ -16,7 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html className="scroll-smooth" lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body
+        className={
+          (montserrat.className,
+          "bg-gradient-to-tl from-light-navy to-navy relative")
+        }
+      >
+        {children}
+      </body>
     </html>
   );
 }
